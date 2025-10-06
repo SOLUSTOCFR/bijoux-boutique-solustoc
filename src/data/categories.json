@@ -1,0 +1,86 @@
+[
+  {
+    "id": "bague-anneau",
+    "name": "Bagues Anneau",
+    "slug": "BAGUE ANNEAU",
+    "icon": "💍",
+    "description": "Bagues élégantes avec anneaux dorés"
+  },
+  {
+    "id": "boucles-oreilles",
+    "name": "Boucles d'Oreilles",
+    "slug": "BOUCLES D'OREILLES",
+    "icon": "💎",
+    "description": "Créoles et studs dorés"
+  },
+  {
+    "id": "bracelet-chaine",
+    "name": "Bracelets Chaîne",
+    "slug": "BRACELET CHAINE",
+    "icon": "📿",
+    "description": "Bracelets chaîne Bijou de Mimi"
+  },
+  {
+    "id": "collier-chaine",
+    "name": "Colliers Chaîne",
+    "slug": "COLLIER CHAINE",
+    "icon": "📿",
+    "description": "Colliers chaîne dorés"
+  },
+  {
+    "id": "collier-grande",
+    "name": "Colliers Grande Maille",
+    "slug": "COLLIER GRANDE",
+    "icon": "📿",
+    "description": "Colliers grande maille dorés"
+  },
+  {
+    "id": "cordon-dore",
+    "name": "Cordons Dorés",
+    "slug": "CORDON DORÉ",
+    "icon": "🧵",
+    "description": "Cordons dorés colorés"
+  },
+  {
+    "id": "medaille-bijou",
+    "name": "Médailles Bijou",
+    "slug": "MÉDAILLE BIJOU",
+    "icon": "🏅",
+    "description": "Médailles bijou avec motifs"
+  },
+  {
+    "id": "medaille-initiale",
+    "name": "Médailles Initiales",
+    "slug": "MÉDAILLE INITIALE",
+    "icon": "🔤",
+    "description": "Médailles avec initiales personnalisées"
+  },
+  {
+    "id": "medaille-pampille",
+    "name": "Médailles Pampille",
+    "slug": "MÉDAILLE PAMPILLE",
+    "icon": "🏷️",
+    "description": "Médailles pampille dorées"
+  },
+  {
+    "id": "medaille-pompon",
+    "name": "Médailles Pompon",
+    "slug": "MÉDAILLE POMPON",
+    "icon": "🎀",
+    "description": "Médailles avec pompons"
+  },
+  {
+    "id": "medaille-precieuse",
+    "name": "Médailles Précieuses",
+    "slug": "MÉDAILLE PRÉCIEUSE",
+    "icon": "💎",
+    "description": "Médailles précieuses dorées"
+  },
+  {
+    "id": "medaille-symbole",
+    "name": "Médailles Symbole",
+    "slug": "MÉDAILLE SYMBOLE",
+    "icon": "⭐",
+    "description": "Médailles avec symboles"
+  }
+]
