@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.j
 import { Badge } from '@/components/ui/badge.jsx'
 import { Input } from '@/components/ui/input.jsx'
 import { Label } from '@/components/ui/label.jsx'
+import PhotoUploadNote from './PhotoUploadNote.jsx'
 
 const PhotoManager = ({ product, onPhotosUpdate, isOpen, onClose }) => {
   const [photos, setPhotos] = useState(product?.images || [])
@@ -82,6 +83,9 @@ const PhotoManager = ({ product, onPhotosUpdate, isOpen, onClose }) => {
         </CardHeader>
         
         <CardContent className="space-y-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+          {/* Note explicative */}
+          <PhotoUploadNote />
+          
           {/* Zone de téléchargement */}
           <div
             className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${

@@ -1,86 +1,58 @@
 [
   {
-    "id": "bague-anneau",
-    "name": "Bagues Anneau",
-    "slug": "BAGUE ANNEAU",
-    "icon": "💍",
-    "description": "Bagues élégantes avec anneaux dorés"
-  },
-  {
-    "id": "boucles-oreilles",
-    "name": "Boucles d'Oreilles",
-    "slug": "BOUCLES D'OREILLES",
-    "icon": "💎",
-    "description": "Créoles et studs dorés"
-  },
-  {
-    "id": "bracelet-chaine",
-    "name": "Bracelets Chaîne",
-    "slug": "BRACELET CHAINE",
-    "icon": "📿",
-    "description": "Bracelets chaîne Bijou de Mimi"
-  },
-  {
-    "id": "collier-chaine",
-    "name": "Colliers Chaîne",
-    "slug": "COLLIER CHAINE",
-    "icon": "📿",
-    "description": "Colliers chaîne dorés"
-  },
-  {
-    "id": "collier-grande",
-    "name": "Colliers Grande Maille",
-    "slug": "COLLIER GRANDE",
-    "icon": "📿",
-    "description": "Colliers grande maille dorés"
+    "id": "medaille-pampille",
+    "name": "MÉDAILLE PAMPILLE",
+    "slug": "MÉDAILLE PAMPILLE",
+    "icon": "🏅",
+    "description": "Médailles pampille dorées",
+    "count": 61
   },
   {
     "id": "cordon-dore",
-    "name": "Cordons Dorés",
+    "name": "CORDON DORÉ",
     "slug": "CORDON DORÉ",
     "icon": "🧵",
-    "description": "Cordons dorés colorés"
+    "description": "Cordons dorés colorés",
+    "count": 6
   },
   {
-    "id": "medaille-bijou",
-    "name": "Médailles Bijou",
-    "slug": "MÉDAILLE BIJOU",
-    "icon": "🏅",
-    "description": "Médailles bijou avec motifs"
-  },
-  {
-    "id": "medaille-initiale",
-    "name": "Médailles Initiales",
-    "slug": "MÉDAILLE INITIALE",
-    "icon": "🔤",
-    "description": "Médailles avec initiales personnalisées"
-  },
-  {
-    "id": "medaille-pampille",
-    "name": "Médailles Pampille",
-    "slug": "MÉDAILLE PAMPILLE",
-    "icon": "🏷️",
-    "description": "Médailles pampille dorées"
-  },
-  {
-    "id": "medaille-pompon",
-    "name": "Médailles Pompon",
-    "slug": "MÉDAILLE POMPON",
-    "icon": "🎀",
-    "description": "Médailles avec pompons"
-  },
-  {
-    "id": "medaille-precieuse",
-    "name": "Médailles Précieuses",
-    "slug": "MÉDAILLE PRÉCIEUSE",
+    "id": "boucles-oreilles",
+    "name": "BOUCLES D'OREILLES",
+    "slug": "BOUCLES D'OREILLES",
     "icon": "💎",
-    "description": "Médailles précieuses dorées"
+    "description": "Créoles et studs dorés",
+    "count": 5
   },
   {
-    "id": "medaille-symbole",
-    "name": "Médailles Symbole",
-    "slug": "MÉDAILLE SYMBOLE",
-    "icon": "⭐",
-    "description": "Médailles avec symboles"
+    "id": "bracelet-chaine",
+    "name": "BRACELET CHAINE",
+    "slug": "BRACELET CHAINE",
+    "icon": "📿",
+    "description": "Bracelets chaîne Bijou de Mimi",
+    "count": 4
+  },
+  {
+    "id": "bague-anneau",
+    "name": "BAGUE ANNEAU",
+    "slug": "BAGUE ANNEAU",
+    "icon": "💍",
+    "description": "Bagues élégantes avec anneaux dorés",
+    "count": 4
+  },
+  {
+    "id": "collier-chaine",
+    "name": "COLLIER CHAINE",
+    "slug": "COLLIER CHAINE",
+    "icon": "📿",
+    "description": "Colliers chaîne dorés",
+    "count": 2
+  },
+  {
+    "id": "collier-grande",
+    "name": "COLLIER GRANDE",
+    "slug": "COLLIER GRANDE",
+    "icon": "📿",
+    "description": "Colliers grande maille dorés",
+    "count": 1
   }
 ]

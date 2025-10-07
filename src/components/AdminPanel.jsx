@@ -6,10 +6,12 @@ import { Badge } from '@/components/ui/badge.jsx'
 import { Input } from '@/components/ui/input.jsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx'
 import PhotoManager from './PhotoManager.jsx'
+import ProductEditor from './ProductEditor.jsx'
 
 const AdminPanel = ({ products, onProductUpdate, isOpen, onClose }) => {
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [photoManagerOpen, setPhotoManagerOpen] = useState(false)
+  const [productEditorOpen, setProductEditorOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
 
   const filteredProducts = products.filter(product =>
@@ -28,6 +30,11 @@ const AdminPanel = ({ products, onProductUpdate, isOpen, onClose }) => {
   const openPhotoManager = (product) => {
     setSelectedProduct(product)
     setPhotoManagerOpen(true)
+  }
+
+  const openProductEditor = (product) => {
+    setSelectedProduct(product)
+    setProductEditorOpen(true)
   }
 
   if (!isOpen) return null
@@ -111,7 +118,11 @@ const AdminPanel = ({ products, onProductUpdate, isOpen, onClose }) => {
                                 <Camera className="w-4 h-4 mr-2" />
                                 Photos
                               </Button>
-                              <Button size="sm" variant="outline">
+                              <Button 
+                                size="sm" 
+                                variant="outline"
+                                onClick={() => openProductEditor(product)}
+                              >
                                 <Edit className="w-4 h-4 mr-2" />
                                 Modifier
                               </Button>
@@ -243,6 +254,29 @@ const AdminPanel = ({ products, onProductUpdate, isOpen, onClose }) => {
           setPhotoManagerOpen(false)
           setSelectedProduct(null)
         }}
+      />
+
+      <ProductEditor
+        product={selectedProduct}
+        categories={[
+          { id: 1, name: 'Bagues Anneau', slug: 'bagues-anneau', icon: '💍' },
+          { id: 2, name: 'Boucles d\'Oreilles', slug: 'boucles-oreilles', icon: '👂' },
+          { id: 3, name: 'Bracelets Chaîne', slug: 'bracelets-chaine', icon: '🔗' },
+          { id: 4, name: 'Colliers Chaîne', slug: 'colliers-chaine', icon: '📿' },
+          { id: 5, name: 'Colliers Grande Maille', slug: 'colliers-grande-maille', icon: '⛓️' },
+          { id: 6, name: 'Cordons Dorés', slug: 'cordons-dores', icon: '🧵' },
+          { id: 7, name: 'Médailles Bijou', slug: 'medailles-bijou', icon: '🏅' }
+        ]}
+        onSave={(updatedProduct) => {
+          onProductUpdate(updatedProduct)
+          setProductEditorOpen(false)
+          setSelectedProduct(null)
+        }}
+        onCancel={() => {
+          setProductEditorOpen(false)
+          setSelectedProduct(null)
+        }}
+        isOpen={productEditorOpen}
       />
     </>
   )

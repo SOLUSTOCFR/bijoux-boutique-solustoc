@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "name": "BAGUE ANNEAU LARGE LBDM DORE",
+    "category": "BAGUE ANNEAU",
+    "stock": 10,
+    "pricePublic": 15,
+    "pricePromo": 3.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/TLbPNoCRaCXcJrJu.png",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/TLbPNoCRaCXcJrJu.png"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "BAGUE ANNEAU PERLES COLOREES DORE BLEU CANARD",
+    "category": "BAGUE ANNEAU",
+    "stock": 69,
+    "pricePublic": 12,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/lkRpnkHmuaaXMPup.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/lkRpnkHmuaaXMPup.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "BAGUE ANNEAU PERLES COLOREES DORE SAFRAN",
+    "category": "BAGUE ANNEAU",
+    "stock": 76,
+    "pricePublic": 12,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/QyykeJwdTUDfQyrY.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/QyykeJwdTUDfQyrY.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "BAGUE ANNEAU PERLES MÉTALS DORE",
+    "category": "BAGUE ANNEAU",
+    "stock": 22,
+    "pricePublic": 12,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/yCdQCOjbAiDZOQLg.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/yCdQCOjbAiDZOQLg.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "BOUCLES D'OREILLES CRÉOLE 20 MM DORE SAFRAN",
+    "category": "BOUCLES D'OREILLES",
+    "stock": 72,
+    "pricePublic": 9,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/MZTpybSiGVnuVQOP.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/MZTpybSiGVnuVQOP.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "BOUCLES D'OREILLES CRÉOLE 40MM DORE SAFRAN",
+    "category": "BOUCLES D'OREILLES",
+    "stock": 161,
+    "pricePublic": 12,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/iObCQoCtOdaWLrdj.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/iObCQoCtOdaWLrdj.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "BOUCLES D'OREILLES CRÉOLE 40MM DORE",
+    "category": "BOUCLES D'OREILLES",
+    "stock": 34,
+    "pricePublic": 22,
+    "pricePromo": 4.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/PSryjZSyJEWGMDxI.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/PSryjZSyJEWGMDxI.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "BOUCLES D'OREILLES CRÉOLE DORE BLEU CANARD",
+    "category": "BOUCLES D'OREILLES",
+    "stock": 10,
+    "pricePublic": 15,
+    "pricePromo": 3.99,
+    "image": "/images/products/boucles-oreilles-creole-dore-bleu-canard.jpg",
+    "images": [
+      "/images/products/boucles-oreilles-creole-dore-bleu-canard.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "BOUCLES D'OREILLES STUDS DORE",
+    "category": "BOUCLES D'OREILLES",
+    "stock": 42,
+    "pricePublic": 9,
+    "pricePromo": 2.99,
+    "image": "/images/products/boucles-oreilles-studs-dore.jpg",
+    "images": [
+      "/images/products/boucles-oreilles-studs-dore.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "BRACELET CHAINE BIJOU DE MIMI DORE",
+    "category": "BRACELET CHAINE",
+    "stock": 101,
+    "pricePublic": 12,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/shUVkvuOULTIWHIa.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/shUVkvuOULTIWHIa.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "BRACELET CHAINE BIJOU DE MIMI DORE BLACK",
+    "category": "BRACELET CHAINE",
+    "stock": 25,
+    "pricePublic": 12,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/shUVkvuOULTIWHIa.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/shUVkvuOULTIWHIa.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "BRACELET CHAINE BIJOU DE MIMI DORE FLUO PINK",
+    "category": "BRACELET CHAINE",
+    "stock": 3,
+    "pricePublic": 15,
+    "pricePromo": 3.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/shUVkvuOULTIWHIa.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/shUVkvuOULTIWHIa.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "COLLIER CHAINE DORE",
+    "category": "COLLIER CHAINE",
+    "stock": 200,
+    "pricePublic": 15,
+    "pricePromo": 3.99,
+    "image": "/images/products/collier-chaine-dore.jpg",
+    "images": [
+      "/images/products/collier-chaine-dore.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "BRACELET CHAINE BIJOU DE MIMI DORE POINSETTIA",
+    "category": "BRACELET CHAINE",
+    "stock": 35,
+    "pricePublic": 12,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/ZmCJKBuCowxfcyVo.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/ZmCJKBuCowxfcyVo.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "COLLIER CHAINE PERLES COLORÉES DORE SAFRAN",
+    "category": "COLLIER CHAINE",
+    "stock": 19,
+    "pricePublic": 19,
+    "pricePromo": 4.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/WbNwPDdBXAPSCKFc.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/WbNwPDdBXAPSCKFc.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "COLLIER GRANDE MAILLE DORE",
+    "category": "COLLIER GRANDE",
+    "stock": 9,
+    "pricePublic": 19,
+    "pricePromo": 4.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/keDbrXwORHEveCnn.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/keDbrXwORHEveCnn.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "CORDON DORÉ BLEU JEAN",
+    "category": "CORDON DORÉ",
+    "stock": 74,
+    "pricePublic": 9,
+    "pricePromo": 2.2,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/jBryUbWCWtbtHMib.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/jBryUbWCWtbtHMib.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "CORDON DORÉ BOUTON D OR",
+    "category": "CORDON DORÉ",
+    "stock": 33,
+    "pricePublic": 9,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/MOEthbTHXTaPgHWL.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/MOEthbTHXTaPgHWL.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "CORDON DORÉ FLAME ORANGE",
+    "category": "CORDON DORÉ",
+    "stock": 51,
+    "pricePublic": 9,
+    "pricePromo": 1.9,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/XqcJYoakFIWiEeFz.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/XqcJYoakFIWiEeFz.jpg"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "CORDON DORÉ FLUO YELLOW",
+    "category": "CORDON DORÉ",
+    "stock": 76,
+    "pricePublic": 9,
+    "pricePromo": 1.9,
+    "image": "/images/products/cordon-dore-fluo-yellow.jpg",
+    "images": [
+      "/images/products/cordon-dore-fluo-yellow.jpg"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "CORDON DORÉ LUREX JAUNE",
+    "category": "CORDON DORÉ",
+    "stock": 62,
+    "pricePublic": 9,
+    "pricePromo": 1.9,
+    "image": "/images/products/cordon-dore-lurex-jaune.jpg",
+    "images": [
+      "/images/products/cordon-dore-lurex-jaune.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "CORDON DORÉ SAFRAN",
+    "category": "CORDON DORÉ",
+    "stock": 462,
+    "pricePublic": 9,
+    "pricePromo": 1.9,
+    "image": "/images/products/cordon-dore-safran.jpg",
+    "images": [
+      "/images/products/cordon-dore-safran.jpg"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "MÉDAILLE BIJOU DORÉ ASTRE",
+    "category": "MÉDAILLE BIJOU",
+    "stock": 48,
+    "pricePublic": 15,
+    "pricePromo": 3.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/hREFCeQeEoLpaevh.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/hREFCeQeEoLpaevh.jpg"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "MÉDAILLE BIJOU DORÉ CHANCE",
+    "category": "MÉDAILLE BIJOU",
+    "stock": 75,
+    "pricePublic": 15,
+    "pricePromo": 3.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/UrvHvPUNEvNqIkmE.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/UrvHvPUNEvNqIkmE.jpg"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "MÉDAILLE BIJOU DORÉ DREAMS",
+    "category": "MÉDAILLE BIJOU",
+    "stock": 100,
+    "pricePublic": 15,
+    "pricePromo": 3.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/ZimIPcHYpTjnOiGJ.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/ZimIPcHYpTjnOiGJ.jpg"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "MÉDAILLE BIJOU DORÉ LOVE",
+    "category": "MÉDAILLE BIJOU",
+    "stock": 155,
+    "pricePublic": 10,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/lieoSeNhNTQBkimD.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/lieoSeNhNTQBkimD.jpg"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "MÉDAILLE BIJOU DORÉ PETIT ANGE",
+    "category": "MÉDAILLE BIJOU",
+    "stock": 174,
+    "pricePublic": 12,
+    "pricePromo": 2.99,
+    "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/QbwwYupSpgfkGBWR.jpg",
+    "images": [
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663133276894/QbwwYupSpgfkGBWR.jpg"
+    ]
+  }
+]
