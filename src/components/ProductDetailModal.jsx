@@ -68,7 +68,7 @@ const ProductDetailModal = ({ product, categories, onClose, onAddToCart, onToggl
       <div className="product-modal-content bg-white rounded-lg shadow-xl max-w-6xl w-full h-full sm:h-auto sm:max-h-[95vh] overflow-hidden">
         <div className="flex flex-col lg:flex-row h-full sm:max-h-[calc(95vh-0px)]">
           {/* Section Image avec Zoom */}
-          <div className="relative bg-gradient-to-br from-amber-50 to-yellow-50 flex items-start justify-center pt-8 min-h-[400px] lg:min-h-[600px]">
+          <div className="relative bg-gradient-to-br from-amber-50 to-yellow-50 flex items-center justify-center min-h-[200px] md:min-h-[400px] lg:min-h-[600px]">
             {/* Bouton fermer - repositionné */}
             <Button
                 variant="ghost"
@@ -194,15 +194,7 @@ const ProductDetailModal = ({ product, categories, onClose, onAddToCart, onToggl
                     </Button>
                   </div>
 
-                  {/* Évaluations */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600">(4.8/5 - 127 avis)</span>
-                  </div>
+
                 </div>
 
                 {/* Prix */}
@@ -216,14 +208,9 @@ const ProductDetailModal = ({ product, categories, onClose, onAddToCart, onToggl
                     </span>
                   </div>
                   
-                  <div className="flex items-center gap-2">
-                    <Badge className="bg-red-500 text-white">
-                      -{discountPercentage}% de réduction
-                    </Badge>
-                    <span className="text-green-600 font-medium">
-                      Vous économisez {(product.pricePublic - product.pricePromo).toFixed(2)}€
-                    </span>
-                  </div>
+                  <Badge className="bg-red-500 text-white">
+                    -{discountPercentage}% de réduction
+                  </Badge>
                 </div>
 
                 {/* Stock */}
@@ -251,23 +238,9 @@ const ProductDetailModal = ({ product, categories, onClose, onAddToCart, onToggl
                       {product.description || `Magnifique ${product.name.toLowerCase()} en finition dorée. 
                       Bijou élégant et raffiné, parfait pour sublimer votre style au quotidien ou lors d'occasions spéciales.`}
                     </p>
-                    <div className="grid grid-cols-2 gap-4 mt-4 p-4 bg-gray-50 rounded-lg">
-                      <div>
-                        <span className="font-medium">Matériau:</span>
-                        <p className="text-sm text-gray-600">Métal doré</p>
-                      </div>
-                      <div>
-                        <span className="font-medium">Finition:</span>
-                        <p className="text-sm text-gray-600">Dorée brillante</p>
-                      </div>
-                      <div>
-                        <span className="font-medium">Style:</span>
-                        <p className="text-sm text-gray-600">Moderne & Élégant</p>
-                      </div>
-                      <div>
-                        <span className="font-medium">Occasion:</span>
-                        <p className="text-sm text-gray-600">Quotidien & Soirée</p>
-                      </div>
+                    <div className="mt-3 p-3 bg-gray-50 rounded-lg text-sm">
+                      <span className="font-medium">Matériau:</span> Métal doré • 
+                      <span className="font-medium">Finition:</span> Dorée brillante
                     </div>
                   </div>
                 </div>
