@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { ShoppingCart, Search, Star, Filter, Heart, Eye, Settings, Camera, CheckCircle } from 'lucide-react'
+import { ShoppingCart, Search, Star, Filter, Heart, Eye, Settings, Camera, CheckCircle, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 import { Input } from '@/components/ui/input.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -24,6 +24,8 @@ import Footer from './components/Footer.jsx'
 import QuiSommesNous from './pages/QuiSommesNous.jsx'
 import CGV from './pages/CGV.jsx'
 import AProposBijoux from './pages/AProposBijoux.jsx'
+import Contact from './pages/Contact.jsx'
+import CustomerRegistration from './components/CustomerRegistration.jsx'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -43,6 +45,10 @@ function App() {
   const [quiSommesNousOpen, setQuiSommesNousOpen] = useState(false)
   const [cgvOpen, setCgvOpen] = useState(false)
   const [aproposBijouxOpen, setAproposBijouxOpen] = useState(false)
+  const [contactOpen, setContactOpen] = useState(false)
+  
+  // États pour le processus de commande
+  const [checkoutStep, setCheckoutStep] = useState('cart') // 'cart', 'registration', 'payment'
   
   // État pour la modal du panier
   const [cartModalOpen, setCartModalOpen] = useState(false)
@@ -123,6 +129,18 @@ function App() {
     setCart(prev => prev.filter(item => item.id !== productId))
   }
 
+  const proceedToCheckout = () => {
+    setCheckoutStep('registration')
+  }
+
+  const handleCustomerRegistration = (customerData) => {
+    console.log('Données client:', customerData)
+    // Ici on pourrait envoyer les données au backend
+    setCheckoutStep('payment')
+    // Pour l'instant, on affiche juste une alerte
+    alert('Inscription réussie ! Le système de paiement sera intégré prochainement.')
+  }
+
   const toggleFavorite = (productId) => {
     setFavorites(prev =>
       prev.includes(productId)
@@ -186,6 +204,15 @@ function App() {
             </div>
             
             <div className="flex items-center space-x-2 sm:space-x-4">
+              <Button 
+                variant="outline"
+                size="sm" 
+                className="h-10 px-3 sm:px-4"
+                onClick={() => setContactOpen(true)}
+              >
+                <Mail className="w-4 h-4 sm:mr-2" />
+                <span className="hidden sm:inline">Contact</span>
+              </Button>
               <Button 
                 size="sm" 
                 className="relative bg-amber-500 hover:bg-amber-600 text-white h-10 px-3 sm:px-4"
@@ -421,7 +448,6 @@ function App() {
         favorites={favorites}
         isOpen={productDetailOpen}
       />
-
       {/* Modal du panier */}
       <CartModal
         isOpen={cartModalOpen}
@@ -430,7 +456,7 @@ function App() {
         updateQuantity={updateQuantity}
         removeFromCart={removeFromCart}
         cartTotal={cartTotal}
-        cartItemsCount={cartItemsCount}
+        onProceedToCheckout={proceedToCheckout}
       />
 
       {/* Aide pour l'accès admin */}
@@ -441,6 +467,7 @@ function App() {
         onOpenQuiSommesNous={() => setQuiSommesNousOpen(true)}
         onOpenCGV={() => setCgvOpen(true)}
         onOpenAProposBijoux={() => setAproposBijouxOpen(true)}
+        onOpenContact={() => setContactOpen(true)}
       />
 
       {/* Pages modales du footer */}
@@ -454,6 +481,24 @@ function App() {
       
       {aproposBijouxOpen && (
         <AProposBijoux onClose={() => setAproposBijouxOpen(false)} />
+      )}
+
+      {contactOpen && (
+        <Contact onClose={() => setContactOpen(false)} />
+      )}
+
+      {/* Processus de commande */}
+      {checkoutStep === 'registration' && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <CustomerRegistration
+              cartTotal={cartTotal}
+              cartItems={cart}
+              onComplete={handleCustomerRegistration}
+              onSkip={() => setCheckoutStep('cart')}
+            />
+          </div>
+        </div>
       )}
 
       {/* Toast de notification */}

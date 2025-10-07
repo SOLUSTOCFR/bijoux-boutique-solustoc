@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = ({ onOpenQuiSommesNous, onOpenCGV, onOpenAProposBijoux }) => {
+const Footer = ({ onOpenQuiSommesNous, onOpenCGV, onOpenAProposBijoux, onOpenContact }) => {
   return (
     <footer className="bg-gray-800 text-white py-8 mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,6 +32,12 @@ const Footer = ({ onOpenQuiSommesNous, onOpenCGV, onOpenAProposBijoux }) => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-amber-400">Liens utiles</h3>
             <div className="space-y-2 text-sm">
+              <button 
+                onClick={onOpenContact}
+                className="block text-gray-300 hover:text-amber-400 transition-colors"
+              >
+                📧 Nous contacter
+              </button>
               <button 
                 onClick={onOpenQuiSommesNous}
                 className="block text-gray-300 hover:text-amber-400 transition-colors"

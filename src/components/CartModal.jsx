@@ -3,15 +3,7 @@ import { X, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 
-const CartModal = ({ 
-  isOpen, 
-  onClose, 
-  cart, 
-  updateQuantity, 
-  removeFromCart, 
-  cartTotal, 
-  cartItemsCount 
-}) => {
+const CartModal = ({ isOpen, onClose, cart, updateQuantity, removeFromCart, cartTotal, onProceedToCheckout }) => {
   if (!isOpen) return null
 
   return (
@@ -139,6 +131,10 @@ const CartModal = ({
                   <Button
                     className="w-full sm:flex-1 bg-amber-500 hover:bg-amber-600 h-12 text-base sm:text-lg font-medium"
                     disabled={cart.length === 0}
+                    onClick={() => {
+                      onClose()
+                      onProceedToCheckout()
+                    }}
                   >
                     Procéder au paiement - {cartTotal.toFixed(2)}€
                   </Button>
