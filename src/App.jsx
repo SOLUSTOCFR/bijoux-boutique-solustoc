@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { ShoppingCart, Search, Star, Filter, Heart, Eye, Settings, Camera } from 'lucide-react'
+import { ShoppingCart, Search, Star, Filter, Heart, Eye, Settings, Camera, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
 import { Input } from '@/components/ui/input.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -17,6 +17,7 @@ import AdminPanel from './components/AdminPanel.jsx'
 import ProductDetailModal from './components/ProductDetailModalSimple.jsx'
 import AdminHelp from './components/AdminHelp.jsx'
 import CartModal from './components/CartModal.jsx'
+import Toast from './components/Toast.jsx'
 
 // Import du footer et des pages
 import Footer from './components/Footer.jsx'
@@ -45,6 +46,14 @@ function App() {
   
   // État pour la modal du panier
   const [cartModalOpen, setCartModalOpen] = useState(false)
+  
+  // États pour les notifications
+  const [toastVisible, setToastVisible] = useState(false)
+  const [toastMessage, setToastMessage] = useState('')
+  const [toastType, setToastType] = useState('success')
+  
+  // État pour le feedback des boutons
+  const [addingToCart, setAddingToCart] = useState(null)
 
   // Filtrage des produits par catégorie
   const filteredProducts = useMemo(() => {
@@ -59,17 +68,41 @@ function App() {
 
   // Fonctions du panier
   const addToCart = (product) => {
+    // Feedback visuel sur le bouton
+    setAddingToCart(product.id)
+    
     setCart(prev => {
       const existing = prev.find(item => item.id === product.id)
+      let newQuantity = 1
+      
       if (existing) {
-        return prev.map(item =>
+        newQuantity = Math.min(existing.quantity + 1, product.stock)
+        const updatedCart = prev.map(item =>
           item.id === product.id
-            ? { ...item, quantity: Math.min(item.quantity + 1, product.stock) }
+            ? { ...item, quantity: newQuantity }
             : item
         )
+        
+        // Notification pour ajout de quantité
+        setToastMessage(`Quantité mise à jour : ${newQuantity} × ${product.name}`)
+        setToastType('cart')
+        setToastVisible(true)
+        
+        return updatedCart
+      } else {
+        // Notification pour nouvel ajout
+        setToastMessage(`✨ ${product.name} ajouté au panier !`)
+        setToastType('success')
+        setToastVisible(true)
+        
+        return [...prev, { ...product, quantity: 1 }]
       }
-      return [...prev, { ...product, quantity: 1 }]
     })
+    
+    // Retirer le feedback après 1 seconde
+    setTimeout(() => {
+      setAddingToCart(null)
+    }, 1000)
   }
 
   const updateQuantity = (productId, newQuantity) => {
@@ -324,20 +357,34 @@ function App() {
                   </div>
 
                   <Button 
-                    className="w-full bg-amber-500 hover:bg-amber-600 text-white text-xs sm:text-sm py-2"
+                    className={`w-full text-white text-xs sm:text-sm py-2 transition-all duration-300 ${
+                      addingToCart === product.id 
+                        ? 'bg-green-500 hover:bg-green-600' 
+                        : 'bg-amber-500 hover:bg-amber-600'
+                    }`}
                     onClick={(e) => {
                       e.stopPropagation()
                       addToCart(product)
                     }}
-                    disabled={product.stock === 0}
+                    disabled={product.stock === 0 || addingToCart === product.id}
                   >
-                    <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                    <span className="hidden sm:inline">
-                      {product.stock === 0 ? 'Rupture de stock' : 'Ajouter au panier'}
-                    </span>
-                    <span className="sm:hidden">
-                      {product.stock === 0 ? 'Rupture' : 'Ajouter'}
-                    </span>
+                    {addingToCart === product.id ? (
+                      <>
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                        <span className="hidden sm:inline">Ajouté !</span>
+                        <span className="sm:hidden">✓</span>
+                      </>
+                    ) : (
+                      <>
+                        <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                        <span className="hidden sm:inline">
+                          {product.stock === 0 ? 'Rupture de stock' : 'Ajouter au panier'}
+                        </span>
+                        <span className="sm:hidden">
+                          {product.stock === 0 ? 'Rupture' : 'Ajouter'}
+                        </span>
+                      </>
+                    )}
                   </Button>
                 </div>
               </CardContent>
@@ -408,6 +455,15 @@ function App() {
       {aproposBijouxOpen && (
         <AProposBijoux onClose={() => setAproposBijouxOpen(false)} />
       )}
+
+      {/* Toast de notification */}
+      <Toast
+        message={toastMessage}
+        type={toastType}
+        isVisible={toastVisible}
+        onClose={() => setToastVisible(false)}
+        duration={3000}
+      />
     </div>
   )
 }
