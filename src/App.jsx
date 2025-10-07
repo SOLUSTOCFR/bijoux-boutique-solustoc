@@ -42,33 +42,8 @@ function App() {
   const [cgvOpen, setCgvOpen] = useState(false)
   const [aproposBijouxOpen, setAproposBijouxOpen] = useState(false)
 
-  // Filtrage et tri des produits
-  const filteredProducts = useMemo(() => {
-    // Si on recherche ou filtre par catégorie, utiliser tous les produits
-    const productsToFilter = (searchTerm || selectedCategory !== 'all') ? allProducts : products
-    
-    let filtered = productsToFilter.filter(product => {
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
-      const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory
-      return matchesSearch && matchesCategory
-    })
-
-    // Tri
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'price-asc':
-          return a.pricePromo - b.pricePromo
-        case 'price-desc':
-          return b.pricePromo - a.pricePromo
-        case 'stock':
-          return b.stock - a.stock
-        default:
-          return a.name.localeCompare(b.name)
-      }
-    })
-
-    return filtered
-  }, [products, allProducts, searchTerm, selectedCategory, sortBy])
+  // Produits à afficher (page d'accueil uniquement)
+  const filteredProducts = products
 
   // Fonctions du panier
   const addToCart = (product) => {
@@ -200,55 +175,7 @@ function App() {
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            <div className="flex-1">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                <Input
-                  placeholder="Rechercher un bijou..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
-            </div>
-            
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="w-full md:w-48">
-                <Filter className="w-4 h-4 mr-2" />
-                <SelectValue placeholder="Catégorie" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Toutes les catégories</SelectItem>
-                {categoriesData.map(category => (
-                  <SelectItem key={category.id} value={category.slug}>
-                    {category.icon} {category.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
 
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-full md:w-48">
-                <SelectValue placeholder="Trier par" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="name">Nom A-Z</SelectItem>
-                <SelectItem value="price-asc">Prix croissant</SelectItem>
-                <SelectItem value="price-desc">Prix décroissant</SelectItem>
-                <SelectItem value="stock">Stock disponible</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          
-          <div className="mt-4 text-sm text-gray-600">
-            {filteredProducts.length} produit{filteredProducts.length > 1 ? 's' : ''} trouvé{filteredProducts.length > 1 ? 's' : ''}
-          </div>
-        </div>
-      </section>
 
       {/* Products Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
