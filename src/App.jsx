@@ -16,6 +16,7 @@ import categoriesData from './data/categories.json'
 import AdminPanel from './components/AdminPanel.jsx'
 import ProductDetailModal from './components/ProductDetailModalSimple.jsx'
 import AdminHelp from './components/AdminHelp.jsx'
+import CartModal from './components/CartModal.jsx'
 
 // Import du footer et des pages
 import Footer from './components/Footer.jsx'
@@ -41,9 +42,20 @@ function App() {
   const [quiSommesNousOpen, setQuiSommesNousOpen] = useState(false)
   const [cgvOpen, setCgvOpen] = useState(false)
   const [aproposBijouxOpen, setAproposBijouxOpen] = useState(false)
+  
+  // État pour la modal du panier
+  const [cartModalOpen, setCartModalOpen] = useState(false)
 
-  // Produits à afficher (page d'accueil uniquement)
-  const filteredProducts = products
+  // Filtrage des produits par catégorie
+  const filteredProducts = useMemo(() => {
+    // Si aucune catégorie sélectionnée ou "all", afficher les produits de la page d'accueil
+    if (selectedCategory === 'all') {
+      return products
+    }
+    
+    // Sinon, filtrer tous les produits par catégorie
+    return allProducts.filter(product => product.category === selectedCategory)
+  }, [products, allProducts, selectedCategory])
 
   // Fonctions du panier
   const addToCart = (product) => {
@@ -58,6 +70,24 @@ function App() {
       }
       return [...prev, { ...product, quantity: 1 }]
     })
+  }
+
+  const updateQuantity = (productId, newQuantity) => {
+    if (newQuantity === 0) {
+      removeFromCart(productId)
+      return
+    }
+    setCart(prev =>
+      prev.map(item =>
+        item.id === productId
+          ? { ...item, quantity: newQuantity }
+          : item
+      )
+    )
+  }
+
+  const removeFromCart = (productId) => {
+    setCart(prev => prev.filter(item => item.id !== productId))
   }
 
   const toggleFavorite = (productId) => {
@@ -105,11 +135,11 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-yellow-50">
       {/* Header */}
-      <header className="bg-white shadow-lg border-b-4 border-amber-400">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-4">
-              <div className="text-2xl font-bold text-amber-600">
+      <header className="bg-white shadow-lg border-b-4 border-amber-400 sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="text-xl sm:text-2xl font-bold text-amber-600">
                 ✨ Bijoux d'<span 
                   onClick={handleAdminAccess}
                   className="cursor-pointer hover:text-amber-700 transition-colors select-none"
@@ -117,60 +147,71 @@ function App() {
                   style={{userSelect: 'none'}}
                 >Or</span>
               </div>
-              <Badge variant="secondary" className="bg-amber-100 text-amber-800">
+              <Badge variant="secondary" className="hidden sm:inline-flex bg-amber-100 text-amber-800 text-xs sm:text-sm">
                 Promotions jusqu'à -75%
               </Badge>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <Button variant="outline" size="sm" className="relative">
-                <ShoppingCart className="w-4 h-4 mr-2" />
-                Panier
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <Button 
+                size="sm" 
+                className="relative bg-amber-500 hover:bg-amber-600 text-white h-10 px-3 sm:px-4"
+                onClick={() => setCartModalOpen(true)}
+              >
+                <ShoppingCart className="w-4 h-4 sm:mr-2" />
+                <span className="hidden sm:inline">Panier</span>
                 {cartItemsCount > 0 && (
-                  <Badge className="absolute -top-2 -right-2 bg-red-500 text-white">
+                  <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs min-w-[20px] h-5 flex items-center justify-center rounded-full">
                     {cartItemsCount}
                   </Badge>
                 )}
               </Button>
-              <div className="text-sm font-medium text-gray-700">
-                Total: {cartTotal.toFixed(2)}€
+              <div className="text-xs sm:text-sm font-medium text-gray-700">
+                {cartTotal.toFixed(2)}€
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Navigation Catégories Horizontale */}
+      {/* Navigation Catégories Mobile-Optimized */}
       <section className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-gray-900">Catégories</h2>
-            <Badge variant="outline" className="text-gray-600">
-              {filteredProducts.length} produits trouvés
-            </Badge>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
+            <h2 className="text-base sm:text-lg font-semibold text-gray-900">Catégories</h2>
+            <div className="text-xs sm:text-sm text-gray-600">
+              {filteredProducts.length} produit{filteredProducts.length > 1 ? 's' : ''} trouvé{filteredProducts.length > 1 ? 's' : ''}
+            </div>
           </div>
           
-          <div className="flex flex-wrap gap-3">
-            <Button
-              variant={selectedCategory === 'all' ? 'default' : 'outline'}
-              size="sm"
-              onClick={() => setSelectedCategory('all')}
-              className={selectedCategory === 'all' ? 'bg-amber-500 hover:bg-amber-600' : 'hover:bg-amber-50'}
-            >
-              Tous ({allProducts.length})
-            </Button>
-            
-            {categoriesData.map(category => (
+          {/* Scroll horizontal sur mobile */}
+          <div className="overflow-x-auto pb-2 -mx-3 px-3">
+            <div className="flex space-x-2 min-w-max">
               <Button
-                key={category.id}
-                variant={selectedCategory === category.slug ? 'default' : 'outline'}
+                variant={selectedCategory === 'all' ? 'default' : 'outline'}
                 size="sm"
-                onClick={() => setSelectedCategory(category.slug)}
-                className={selectedCategory === category.slug ? 'bg-amber-500 hover:bg-amber-600' : 'hover:bg-amber-50'}
+                onClick={() => setSelectedCategory('all')}
+                className={`whitespace-nowrap h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4 ${
+                  selectedCategory === 'all' ? 'bg-amber-500 hover:bg-amber-600 text-white' : 'hover:bg-amber-50'
+                }`}
               >
-                {category.icon} {category.name}
+                Tous ({allProducts.length})
               </Button>
-            ))}
+              
+              {categoriesData.map(category => (
+                <Button
+                  key={category.id}
+                  variant={selectedCategory === category.slug ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedCategory(category.slug)}
+                  className={`whitespace-nowrap h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4 ${
+                    selectedCategory === category.slug ? 'bg-amber-500 hover:bg-amber-600 text-white' : 'hover:bg-amber-50'
+                  }`}
+                >
+                  {category.icon} {category.name}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -332,6 +373,17 @@ function App() {
         onToggleFavorite={toggleFavorite}
         favorites={favorites}
         isOpen={productDetailOpen}
+      />
+
+      {/* Modal du panier */}
+      <CartModal
+        isOpen={cartModalOpen}
+        onClose={() => setCartModalOpen(false)}
+        cart={cart}
+        updateQuantity={updateQuantity}
+        removeFromCart={removeFromCart}
+        cartTotal={cartTotal}
+        cartItemsCount={cartItemsCount}
       />
 
       {/* Aide pour l'accès admin */}
