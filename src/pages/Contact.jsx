@@ -46,8 +46,8 @@ const Contact = ({ onClose }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2 sm:p-4">
+      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full h-full sm:h-auto sm:max-h-[95vh] overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b bg-gradient-to-r from-amber-50 to-yellow-50">
           <div className="flex items-center space-x-3">
@@ -64,7 +64,7 @@ const Contact = ({ onClose }) => {
           </Button>
         </div>
 
-        <div className="flex flex-col lg:flex-row max-h-[calc(90vh-100px)]">
+        <div className="flex flex-col lg:flex-row h-full sm:max-h-[calc(95vh-100px)]">
           {/* Informations de contact */}
           <div className="lg:w-1/3 bg-gradient-to-br from-amber-500 to-yellow-600 text-white p-6 lg:p-8">
             <h3 className="text-xl font-bold mb-6">Nos Coordonnées</h3>
@@ -110,7 +110,7 @@ const Contact = ({ onClose }) => {
           </div>
 
           {/* Formulaire */}
-          <div className="lg:w-2/3 p-6 lg:p-8 overflow-y-auto">
+          <div className="lg:w-2/3 p-4 sm:p-6 lg:p-8 overflow-y-auto flex-1">
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />

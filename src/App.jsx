@@ -105,10 +105,10 @@ function App() {
       }
     })
     
-    // Retirer le feedback après 1 seconde
+    // Retirer le feedback après 800ms pour de meilleures performances
     setTimeout(() => {
       setAddingToCart(null)
-    }, 1000)
+    }, 800)
   }
 
   const updateQuantity = (productId, newQuantity) => {

@@ -14,7 +14,7 @@ const CartModal = ({ isOpen, onClose, cart, updateQuantity, removeFromCart, cart
           <div className="flex items-center space-x-2">
             <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600" />
             <h2 className="text-lg sm:text-2xl font-bold text-gray-900">
-              Mon Panier ({cartItemsCount} article{cartItemsCount > 1 ? 's' : ''})
+              Mon Panier ({cart.reduce((sum, item) => sum + item.quantity, 0)} article{cart.reduce((sum, item) => sum + item.quantity, 0) > 1 ? 's' : ''})
             </h2>
           </div>
           <Button
