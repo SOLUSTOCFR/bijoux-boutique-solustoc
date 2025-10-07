@@ -64,14 +64,13 @@ const ProductDetailModal = ({ product, categories, onClose, onAddToCart, onToggl
   }
 
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-6xl max-h-[95vh] overflow-hidden bg-white">
-        <CardContent className="p-0">
-          <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-            {/* Section Image avec Zoom */}
-            <div className="relative bg-gradient-to-br from-amber-50 to-yellow-50 flex items-start justify-center pt-8 min-h-[400px] lg:min-h-[600px]">
-              {/* Bouton fermer - repositionné */}
-              <Button
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2 sm:p-4">
+      <div className="bg-white rounded-lg shadow-xl max-w-6xl w-full h-full sm:h-auto sm:max-h-[95vh] overflow-hidden">
+        <div className="flex flex-col lg:flex-row h-full sm:max-h-[calc(95vh-0px)]">
+          {/* Section Image avec Zoom */}
+          <div className="relative bg-gradient-to-br from-amber-50 to-yellow-50 flex items-start justify-center pt-8 min-h-[400px] lg:min-h-[600px]">
+            {/* Bouton fermer - repositionné */}
+            <Button
                 variant="ghost"
                 size="sm"
                 onClick={onClose}
@@ -309,8 +308,8 @@ const ProductDetailModal = ({ product, categories, onClose, onAddToCart, onToggl
               </div>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   )
 }
