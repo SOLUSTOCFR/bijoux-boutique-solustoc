@@ -66,45 +66,18 @@ const Contact = ({ onClose }) => {
 
         <div className="flex flex-col lg:flex-row h-full sm:max-h-[calc(95vh-100px)]">
           {/* Informations de contact */}
-          <div className="lg:w-1/3 bg-gradient-to-br from-amber-500 to-yellow-600 text-white p-6 lg:p-8">
-            <h3 className="text-xl font-bold mb-6">Nos Coordonnées</h3>
+          <div className="lg:w-1/3 bg-gradient-to-br from-amber-500 to-yellow-600 text-white p-4 lg:p-6">
+            <h3 className="text-lg font-bold mb-4">Contact</h3>
             
-            <div className="space-y-6">
-              <div className="flex items-start space-x-3">
-                <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-medium mb-1">Email</h4>
-                  <p className="text-amber-100">contact@solustoc.fr</p>
-                </div>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <p className="text-amber-100">contact@solustoc.fr</p>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-medium mb-1">Téléphone</h4>
-                  <p className="text-amber-100">01 23 45 67 89</p>
-                  <p className="text-sm text-amber-200">Lun-Ven 9h-18h</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-medium mb-1">Adresse</h4>
-                  <p className="text-amber-100">
-                    123 Rue des Bijoutiers<br />
-                    75001 Paris, France
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-4 bg-white/10 rounded-lg">
-              <h4 className="font-medium mb-2">Horaires d'ouverture</h4>
-              <div className="text-sm text-amber-100 space-y-1">
-                <p>Lundi - Vendredi : 9h - 18h</p>
-                <p>Samedi : 10h - 17h</p>
-                <p>Dimanche : Fermé</p>
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4 flex-shrink-0" />
+                <p className="text-amber-100">01 23 45 67 89</p>
               </div>
             </div>
           </div>
