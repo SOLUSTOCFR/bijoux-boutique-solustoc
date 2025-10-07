@@ -201,15 +201,11 @@ const ProductDetailModal = ({ product, categories, onClose, onAddToCart, onToggl
               <div className="space-y-3 mb-6 text-sm text-gray-600">
                 <div className="flex items-center gap-3">
                   <Truck className="w-4 h-4" />
-                  <span>Livraison gratuite dès 50€</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Shield className="w-4 h-4" />
-                  <span>Garantie 2 ans</span>
+                  <span>Livraison gratuite dès 20€</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <RotateCcw className="w-4 h-4" />
-                  <span>Retour gratuit sous 30 jours</span>
+                  <span>Retour sous 7 jours</span>
                 </div>
               </div>
 

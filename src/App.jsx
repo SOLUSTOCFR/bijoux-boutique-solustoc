@@ -386,22 +386,7 @@ function App() {
         )}
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">✨ Bijoux d'Or</h3>
-            <p className="text-gray-300 mb-4">
-              Votre boutique en ligne de bijoux dorés avec les meilleures promotions
-            </p>
-            <div className="flex justify-center space-x-4 text-sm text-gray-400">
-              <span>📧 contact@bijoux-dor.fr</span>
-              <span>📞 01 23 45 67 89</span>
-              <span>🚚 Livraison gratuite dès 50€</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+
 
       {/* Panel d'administration */}
       <AdminPanel

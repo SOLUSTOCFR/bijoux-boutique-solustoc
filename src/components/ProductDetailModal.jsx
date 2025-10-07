@@ -301,9 +301,9 @@ const ProductDetailModal = ({ product, categories, onClose, onAddToCart, onToggl
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                   <h4 className="font-semibold text-blue-800 mb-2">🚚 Livraison</h4>
                   <div className="text-sm text-blue-700 space-y-1">
-                    <p>• Livraison gratuite dès 50€ d'achat</p>
+                    <p>• Livraison gratuite dès 20€ d'achat</p>
                     <p>• Expédition sous 24-48h</p>
-                    <p>• Retour gratuit sous 30 jours</p>
+                    <p>• Retour sous 7 jours</p>
                   </div>
                 </div>
               </div>
